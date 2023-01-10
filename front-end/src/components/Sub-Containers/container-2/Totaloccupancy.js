@@ -1,5 +1,4 @@
 import React from 'react'
-import { Card, CardContent } from '@mui/material'
 import Charts from '../../charts/Charts'
 import Highcharts from 'highcharts'
 
@@ -14,7 +13,8 @@ const TotalOccupancy = (props) => {
     })
     const options = {
         chart: {
-            zoomType: 'x'
+            zoomType: 'x',
+            
         },
         title: {
             text: 'Total Occupancy',
@@ -61,13 +61,8 @@ const TotalOccupancy = (props) => {
       }
 
     return (
-        <>
-             <Card >
-                <CardContent>
-                    <Charts options={options}/>
-                 </CardContent>
-             </Card>
-        </>
+       
+            <Charts options={options}/>
     )
 }
 

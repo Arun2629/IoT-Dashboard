@@ -1,7 +1,6 @@
 import React from 'react'
-import { Typography, Card, CardContent } from '@mui/material'
 import Charts from '../../charts/Charts'
-import { Legend } from 'highcharts'
+
 
 
 const EnergyConHistory = (props) => {
@@ -45,15 +44,10 @@ const EnergyConHistory = (props) => {
         },
         series: seriesData
       }
+      
 
     return (
-        <>
-             <Card >
-                <CardContent>
-                    <Charts options={options}/>
-                 </CardContent>
-             </Card>
-        </>
+                <Charts options={options}/>
     )
 }
 

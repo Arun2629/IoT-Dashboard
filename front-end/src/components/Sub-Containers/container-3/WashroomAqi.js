@@ -1,14 +1,8 @@
 import React from 'react'
-import { Card, CardContent } from '@mui/material'
 import Charts from '../../charts/Charts'
 import Highcharts from 'highcharts'
 import * as ChartModuleMore from 'highcharts/highcharts-more.js';
 import HCSoldGauge from 'highcharts/modules/solid-gauge';
-
-
-
-
-
 
 
 const WashroomAqi = (props) => {
@@ -106,13 +100,8 @@ const WashroomAqi = (props) => {
       }
 
     return (
-        <>
-             <Card >
-                <CardContent>
-                    <Charts options={options}/>
-                 </CardContent>
-             </Card>
-        </>
+    
+            <Charts options={options}/>
     )
 }
 

@@ -1,5 +1,4 @@
 import React from 'react'
-import { Card, CardContent } from '@mui/material'
 import Charts from '../../charts/Charts'
 
 
@@ -8,7 +7,7 @@ const SocialGovernance = (props) => {
     const options = {
         chart: {
             renderTo: 'container',
-            type: 'pie'
+            type: 'pie',
         },
         title: {
             text: 'Environmental Social Governance',
@@ -37,13 +36,7 @@ const SocialGovernance = (props) => {
       }
 
     return (
-        <>
-             <Card>
-                <CardContent>
-                    <Charts options={options}/>
-                 </CardContent>
-             </Card>
-        </>
+       <Charts options={options}/>
     )
 }
 

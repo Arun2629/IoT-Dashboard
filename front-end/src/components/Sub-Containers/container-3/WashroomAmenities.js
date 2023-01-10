@@ -1,18 +1,23 @@
 import React from 'react'
-import { Card, CardContent } from '@mui/material'
 import Charts from '../../charts/Charts'
+import Highcharts from "highcharts";
+import bullet from "highcharts/modules/bullet.js";
 
-
+bullet(Highcharts);
 
 const WashroomAmenities = (props) => {
+   
     const options = {
         chart: {
-            marginTop: 40
+            type: 'bullet',
+            inverted: true,
+            marginTop: 100,
         },
         title: {
             text: 'Tissues'
         },
         yAxis: {
+            gridLineWidth: 0,
             plotBands: [{
                 from: 0,
                 to: 150,
@@ -28,6 +33,16 @@ const WashroomAmenities = (props) => {
             }],
             title: null
         },
+        plotOptions: {
+            series: {
+                pointPadding: 0.25,
+                borderWidth: 0,
+                color: '#000',
+                targetOptions: {
+                    width: '200%'
+                }
+            }
+        },
         series: [{
             data: [{
                 y: 275,
@@ -37,13 +52,8 @@ const WashroomAmenities = (props) => {
       }
 
     return (
-        <>
-             <Card >
-                <CardContent>
-                    <Charts options={options}/>
-                 </CardContent>
-             </Card>
-        </>
+      
+            <Charts options={options}/>
     )
 }
 

@@ -7,12 +7,10 @@ import HighchartsReact from 'highcharts-react-official'
   const Charts = (props) => {
     const {options} = props
     return (
-        <div>
-             <HighchartsReact
+              <HighchartsReact
                 highcharts={Highcharts}
                 options={options}
                 />
-        </div>
     )
   }
 

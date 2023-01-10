@@ -26,13 +26,10 @@ const AlertDisplay = (props) => {
                         currentValue: 4.8,
                         unit: 'mg/m^3',
                         recordedAt: new Date()}
-    const result = formatDistanceToNow(
-                     new Date(2014, 6, 2)
-                )
 
     return (
         <>
-            <Card sx={{ minWidth: 275 }}>
+            <Card sx={{position: 'relative', bottom: '50%'}}>
                 <CardContent>
                     <Typography variant='subtitle1'>
                         <WarningAmber sx={{color: 'red'}}/> {airPressureData.parameter} from {airPressureData.equipmentName} - 

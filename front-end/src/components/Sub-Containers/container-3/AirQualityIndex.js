@@ -1,13 +1,12 @@
 import React from 'react'
-import { Card, CardContent, Typography, Button } from '@mui/material'
-import { CarRepair, EnergySavingsLeaf} from '@mui/icons-material'
-import formatDistanceToNow from 'date-fns/formatDistanceToNow'
+import { Card, CardContent, Typography} from '@mui/material'
+
 
 const AirQualityIndex = (props) => {
 
     return (
         <>
-            <Card sx={{ minWidth: 275 }}>
+            <Card sx={{width: '50%'}}>
                 <CardContent>
                     <Typography variant='h4'>
                         910 

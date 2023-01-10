@@ -1,5 +1,4 @@
 import React from 'react'
-import { Typography, Card, CardContent } from '@mui/material'
 import Charts from '../../charts/Charts'
 
 
@@ -14,7 +13,7 @@ const EnergySources = (props) => {
             plotBackgroundColor: null,
             plotBorderWidth: null,
             plotShadow: false,
-            type: 'pie'
+            type: 'pie',
         },
         title: {
             text: 'Energy Sources',
@@ -49,13 +48,8 @@ const EnergySources = (props) => {
       }
 
     return (
-        <>
-             <Card >
-                <CardContent >
-                    <Charts options={options}/>
-                 </CardContent>
-             </Card>
-        </>
+       
+            <Charts options={options}/>
     )
 }
 

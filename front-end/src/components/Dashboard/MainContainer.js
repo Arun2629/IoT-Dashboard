@@ -1,5 +1,5 @@
 import React from 'react'
-import { Grid } from '@mui/material'
+import { CardMedia, Grid, Card } from '@mui/material'
 import Image from "../Sub-Containers/container-1/Image";
 import EnergyConsumption from "../Sub-Containers/container-1/EnergyConsumption";
 import EnergySources from "../Sub-Containers/container-1/EnergySources";
@@ -20,48 +20,64 @@ const MainContainer = (props) => {
 
     return (
         <div className='main-container'>
-            <Grid container spacing={2} marginTop={2} height={10}>
-            <Grid item xs={4}>
+            <Grid container spacing={2} marginTop={2} height={10} >
+                <Grid item xs={4}>
                     <Image/>
                 </Grid>
-                <Grid item xs={2}>
-                <EnergyConsumption/>  
+                <Grid item xs={2} >
+                    <EnergyConsumption/>  
                 </Grid>
                 <Grid item xs={2}>
-                <EnergySources/> 
+                    <Card sx={{height: 400}}>
+                        <CardMedia component={EnergySources}/>
+                    </Card>
                 </Grid>
                 <Grid item xs={4}>
-                    <EnergyConHistory/>
+                    <Card>
+                        <CardMedia component={EnergyConHistory}/>
+                    </Card>
                 </Grid>
-                <Grid item xs={5} >
+                <Grid item xs={3} >
                     <AlertDisplay/>
                 </Grid>
                 <Grid item xs={3} >
-                <TotalOccupancy/>
+                    <Card sx={{position: 'relative', bottom: '50%', height: 390}}>
+                        <CardMedia component={TotalOccupancy}/>
+                    </Card>
                 </Grid>
                 <Grid item xs={4}>
-                    <BookedDesks/>
+                    <Card>
+                        <CardMedia component={BookedDesks}/>
+                    </Card>
+                </Grid>
+                 <Grid item xs={2}>
+                    <FaultReports/>
                 </Grid>
                 <Grid item xs={3}>
-                <SocialGovernance/>
-                </Grid>
-                <Grid item xs={4}>
-                <FaultReports/>
-                </Grid>
-                <Grid item xs={4}>
-                <BookingRooms/>
+                    <Card sx={{position: 'relative', bottom: '60%', height: '100%'}}>
+                        <CardMedia component={SocialGovernance}/>
+                    </Card>
                 </Grid>
                 <Grid item xs={3}>
-                <AirQualityIndex/>
+                    <Card sx={{position: 'relative', bottom: "50%"}}>
+                        <CardMedia component={BookingRooms}/>
+                    </Card>
                 </Grid>
                 <Grid item xs={3}>
-                <WashroomAmenities/>
+                    <AirQualityIndex/>
                 </Grid>
                 <Grid item xs={3}>
-                <WashroomAqi/>
+                    <Card>
+                        <CardMedia component={WashroomAmenities}/>
+                    </Card>
                 </Grid>
                 <Grid item xs={3}>
-                <Feedback/>
+                    <Card>
+                        <CardMedia component={WashroomAqi}/>
+                    </Card>
+                </Grid>
+                <Grid item xs={3}>
+                    <Feedback/>
                 </Grid>
             </Grid>
           

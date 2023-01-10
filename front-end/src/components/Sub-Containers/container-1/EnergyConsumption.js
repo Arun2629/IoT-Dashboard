@@ -16,9 +16,9 @@ const EnergyConsumption = (props) => {
 
     return (
         <>
-             <Card >
+             <Card sx={{height: 190}}>
                 <CardContent>
-                    <Typography sx={{ fontSize: 14 }} color="text.primary" gutterBottom>
+                    <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
                         Energy Consumption
                     </Typography>
                     <Typography variant='h4'>

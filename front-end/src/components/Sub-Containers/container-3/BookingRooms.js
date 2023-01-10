@@ -1,5 +1,4 @@
 import React from 'react'
-import { Card, CardContent } from '@mui/material'
 import Charts from '../../charts/Charts'
 
 
@@ -62,13 +61,8 @@ const BookingRooms = (props) => {
       }
 
     return (
-        <>
-             <Card >
-                <CardContent>
-                    <Charts options={options}/>
-                 </CardContent>
-             </Card>
-        </>
+       
+            <Charts options={options}/>
     )
 }
 
