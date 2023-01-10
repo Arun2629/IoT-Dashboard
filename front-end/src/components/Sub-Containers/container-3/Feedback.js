@@ -12,7 +12,7 @@ const Feedback = (props) => {
    
     return (
         <>
-             <Card >
+             <Card sx={{position: 'relative', left: '280%', bottom: '100%', width: '130%'}} >
                 <CardContent>
                 <Box
                     sx={{

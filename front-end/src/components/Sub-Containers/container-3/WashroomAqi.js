@@ -15,7 +15,7 @@ const WashroomAqi = (props) => {
             plotBackgroundImage: null,
             plotBorderWidth: 0,
             plotShadow: false,
-            height: '80%'
+            height: '50%'
         },
     
         title: {
@@ -27,8 +27,7 @@ const WashroomAqi = (props) => {
             startAngle: -90,
             endAngle: 89.9,
             background: null,
-            center: ['50%', '75%'],
-            size: '110%'
+            size: '60%'
         },
     
         // the value axis

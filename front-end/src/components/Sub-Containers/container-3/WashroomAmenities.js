@@ -14,7 +14,10 @@ const WashroomAmenities = (props) => {
             marginTop: 100,
         },
         title: {
-            text: 'Tissues'
+            text: 'Washroom [FREE]'
+        },
+        xAxis: {
+            categories: ['<span class="hc-cat-title">Tissues</span><br/>']
         },
         yAxis: {
             gridLineWidth: 0,

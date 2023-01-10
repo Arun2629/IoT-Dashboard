@@ -64,19 +64,19 @@ const MainContainer = (props) => {
                     </Card>
                 </Grid>
                 <Grid item xs={3}>
-                    <AirQualityIndex/>
-                </Grid>
-                <Grid item xs={3}>
-                    <Card>
-                        <CardMedia component={WashroomAmenities}/>
-                    </Card>
-                </Grid>
-                <Grid item xs={3}>
                     <Card>
                         <CardMedia component={WashroomAqi}/>
                     </Card>
                 </Grid>
                 <Grid item xs={3}>
+                    <AirQualityIndex/>
+                </Grid>
+                <Grid item xs={4}>
+                    <Card sx={{position: 'relative', bottom: '50%'}}>
+                        <CardMedia component={WashroomAmenities}/>
+                    </Card>
+                </Grid>
+                <Grid item xs={2}>
                     <Feedback/>
                 </Grid>
             </Grid>

@@ -6,7 +6,7 @@ const AirQualityIndex = (props) => {
 
     return (
         <>
-            <Card sx={{width: '50%'}}>
+            <Card sx={{width: '60%', position: 'relative', left: '35%', bottom: '46%'}}>
                 <CardContent>
                     <Typography variant='h4'>
                         910 
