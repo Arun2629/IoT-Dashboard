@@ -1,5 +1,6 @@
 import React from 'react'
 import Charts from '../../charts/Charts'
+import Typography from '@mui/material/Typography';
 
 
 const EnergySources = (props) => {
@@ -10,14 +11,15 @@ const EnergySources = (props) => {
     })
     const options = {
         chart: {
+            height: 150,
+            outerHeight: '10%',
             plotBackgroundColor: null,
             plotBorderWidth: null,
             plotShadow: false,
             type: 'pie',
         },
         title: {
-            text: 'Energy Sources',
-            align: 'left'
+            text: null
         },
         tooltip: {
             pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
@@ -44,12 +46,46 @@ const EnergySources = (props) => {
             name: 'Energy Source',
             colorByPoint: true,
             data: data
-        }]
+        }],
+        responsive: {
+            rules: [{
+                condition: {
+                    maxWidth: 500
+                },
+                chartOptions: {
+                    legend: {
+                        align: 'center',
+                        verticalAlign: 'bottom',
+                        layout: 'horizontal'
+                    },
+                    yAxis: {
+                        labels: {
+                            align: 'left',
+                            x: 0,
+                            y: -5
+                        },
+                        title: {
+                            text: null
+                        }
+                    },
+                    subtitle: {
+                        text: null
+                    },
+                    credits: {
+                        enabled: false
+                    }
+                }
+            }]
+        }
       }
 
     return (
-       
-            <Charts options={options}/>
+        <>
+         <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
+                        Energy Sources
+            </Typography>
+        <Charts options={options}/>
+        </>
     )
 }
 

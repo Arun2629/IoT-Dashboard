@@ -1,5 +1,5 @@
 import React from 'react'
-import { CardMedia, Grid, Card } from '@mui/material'
+import {Grid} from '@mui/material'
 import Image from "../Sub-Containers/container-1/Image";
 import EnergyConsumption from "../Sub-Containers/container-1/EnergyConsumption";
 import EnergySources from "../Sub-Containers/container-1/EnergySources";
@@ -14,69 +14,79 @@ import TotalOccupancy from "../Sub-Containers/container-2/Totaloccupancy";
 import BookedDesks from "../Sub-Containers/container-2/BookedDesks";
 import SocialGovernance from "../Sub-Containers/container-2/SocialGovernance";
 import FaultReports from "../Sub-Containers/container-2/FaultReports";
+import { Box } from '@mui/system';
+
 
 const MainContainer = (props) => {
     
 
     return (
         <div className='main-container'>
-            <Grid container spacing={2} marginTop={2} height={10} >
-                <Grid item xs={4}>
-                    <Image/>
+           <Grid container spacing={1}>
+                <Grid item xs={4} >
+                    <Box
+                    component={Image}>
+                    </Box>
                 </Grid>
                 <Grid item xs={2} >
-                    <EnergyConsumption/>  
+                    <EnergyConsumption/>
                 </Grid>
                 <Grid item xs={2}>
-                    <Card sx={{height: 400}}>
-                        <CardMedia component={EnergySources}/>
-                    </Card>
+                    <Box
+                    sx={{backgroundColor: 'white', borderRadius: 2}}
+                    component={EnergySources}>
+                    </Box>
                 </Grid>
-                <Grid item xs={4}>
-                    <Card>
-                        <CardMedia component={EnergyConHistory}/>
-                    </Card>
-                </Grid>
-                <Grid item xs={3} >
+                <Grid item xs={4}  >
                     <AlertDisplay/>
                 </Grid>
+                <Grid item xs={4} sx={{position: 'relative', left: 510, bottom: 200}}>
+                <Box
+                    sx={{backgroundColor: 'white', borderRadius: '10px'}}
+                    component={EnergyConHistory}>
+                    </Box>
+                </Grid>
+                </Grid>
+            <Grid container spacing={1} marginTop={2}>
                 <Grid item xs={3} >
-                    <Card sx={{position: 'relative', bottom: '50%', height: 390}}>
-                        <CardMedia component={TotalOccupancy}/>
-                    </Card>
+                <Box
+                    sx={{backgroundColor: 'white', borderRadius: 2}}
+                    component={TotalOccupancy}>
+                    </Box>
                 </Grid>
-                <Grid item xs={4}>
-                    <Card>
-                        <CardMedia component={BookedDesks}/>
-                    </Card>
+                <Grid item xs={3}>
+                    <BookedDesks/>
                 </Grid>
-                 <Grid item xs={2}>
+                <Grid item xs={3}>
+                    <Box
+                        component={SocialGovernance}>
+                    </Box>
+                </Grid>
+                 <Grid item xs={3}>
                     <FaultReports/>
                 </Grid>
+            </Grid>
+            <Grid container xs={12} spacing={1} marginTop={2}>
                 <Grid item xs={3}>
-                    <Card sx={{position: 'relative', bottom: '60%', height: '100%'}}>
-                        <CardMedia component={SocialGovernance}/>
-                    </Card>
-                </Grid>
-                <Grid item xs={3}>
-                    <Card sx={{position: 'relative', bottom: "50%"}}>
-                        <CardMedia component={BookingRooms}/>
-                    </Card>
-                </Grid>
-                <Grid item xs={3}>
-                    <Card>
-                        <CardMedia component={WashroomAqi}/>
-                    </Card>
+                    <Box
+                     component={BookingRooms}>
+                    </Box>
                 </Grid>
                 <Grid item xs={3}>
                     <AirQualityIndex/>
                 </Grid>
-                <Grid item xs={4}>
-                    <Card sx={{position: 'relative', bottom: '50%'}}>
-                        <CardMedia component={WashroomAmenities}/>
-                    </Card>
+                <Grid item xs={1.5}>
+                    <Box
+                    sx={{height: '29.5vh', backgroundColor: 'white'}}>
+                        <WashroomAqi/>
+                    </Box>
                 </Grid>
-                <Grid item xs={2}>
+                <Grid item xs={1.5}>
+                    <Box
+                    component={WashroomAmenities}>
+                    </Box>
+                </Grid>
+                <Grid item xs={3}>
                     <Feedback/>
                 </Grid>
             </Grid>

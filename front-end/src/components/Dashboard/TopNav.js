@@ -1,14 +1,15 @@
 import React, {useState, useEffect} from 'react';
 import {withRouter} from 'react-router-dom'
-import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Avatar from '@mui/material/Avatar';
-import MenuIcon from '@mui/icons-material/Menu';
+import AppsOutlinedIcon from '@mui/icons-material/AppsOutlined';
 import LogoutIcon from '@mui/icons-material/Logout';
-import { IconButton, Switch, FormControlLabel } from '@mui/material';
+import { Switch, FormControlLabel, IconButton } from '@mui/material';
 import MenuItem from '@mui/material/MenuItem';
 import Menu from '@mui/material/Menu';
+import { deepOrange } from '@mui/material/colors';
+
 
 
 
@@ -18,6 +19,7 @@ const TopNav = (props) => {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [time, setTime] = useState('')
   const [date, setDate] = useState('')
+  const orange = deepOrange
 
   const dateTimeHandler = () => {
     const currDate = new Date().toDateString()
@@ -44,20 +46,19 @@ const TopNav = (props) => {
   }
 
   return (
-    <div  className='nav-bar' >
-      <AppBar position="static" color='transparent'>
-        <Toolbar >
-        <IconButton
-                size="small"
-                edge="start"
-                color="inherit"
-                aria-label="menu"
-                onClick={handleOpen}
-                sx={{ mr: 2 }}
-            >
-            <MenuIcon />
+        <Toolbar variant='dense' >
+           <IconButton
+            size="large"
+            edge="start"
+            color="inherit"
+            onClick={handleOpen}
+            sx={{ mr: 2, backgroundColor: '#ff4800' }}
+          >
+            <AppsOutlinedIcon fontSize='small' sx={{color: 'white'}}/>
           </IconButton>
-          <Typography  variant="h4" component="h4" sx={{ flexGrow: 1}}>
+            
+       
+          <Typography  variant="h4"  className='comp-name' sx={{ flexGrow: 1 }}>
             nhance
           </Typography >
             
@@ -68,17 +69,15 @@ const TopNav = (props) => {
             <FormControlLabel control={<Switch color='default' />} label="Dark Mode" />
               <Avatar
                 size="small"
-                aria-label="account of current user"
-                aria-controls="menu-appbar"
-                aria-haspopup="true"
                 onClick={handleMenu}
-                color="inherit"
-                sx={{marginRight: "1%"}}
+                sx={{marginRight: "1%", height: '30px', width: '30px', position: 'relative', bottom: 3}}
               >
                 S
               </Avatar>
 
-              <Avatar sizes='small' onClick={handleLogout}>
+              <Avatar sizes='small' 
+                      onClick={handleLogout}
+                      sx={{height: '30px', width: '30px', position: 'relative', bottom: 3}}>
                 <LogoutIcon/>
               </Avatar>
               <Menu
@@ -100,8 +99,6 @@ const TopNav = (props) => {
                 <MenuItem onClick={handleClose}>My account</MenuItem>
               </Menu>
         </Toolbar>
-      </AppBar>
-    </div>
   );
 }
 

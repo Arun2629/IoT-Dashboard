@@ -1,5 +1,6 @@
 import React from 'react'
 import Charts from '../../charts/Charts'
+import { Typography } from '@mui/material'
 
 
 
@@ -12,11 +13,11 @@ const BookedDesks = (props) => {
     })
     const options = {
         chart: {
+            height: 200,
             type: 'column'
         },
         title: {
-            text: 'Booked Desks',
-            align: 'left'
+            text: null
         },
         yAxis: [{
             min: 0
@@ -55,12 +56,19 @@ const BookedDesks = (props) => {
             pointPadding: 0.4,
             pointPlacement: 0.2,
             yAxis: 1
-        }]
+        }],
+       
       }
 
     return (
-    
-            <Charts options={options}/>
+        <>
+         <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
+                        Booked Desks
+        </Typography>
+        <Charts options={options}/>
+        </>
+            
+   
     )
 }
 

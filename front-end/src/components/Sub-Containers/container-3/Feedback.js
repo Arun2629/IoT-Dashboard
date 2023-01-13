@@ -2,7 +2,7 @@ import React, {useState} from 'react'
 import Box from '@mui/material/Box';
 import Rating from '@mui/material/Rating';
 import Typography from '@mui/material/Typography';
-import { Card, CardContent } from '@mui/material'
+
 
 
 
@@ -11,12 +11,16 @@ const Feedback = (props) => {
     const [value, setValue] = useState(3)
    
     return (
-        <>
-             <Card sx={{position: 'relative', left: '280%', bottom: '100%', width: '130%'}} >
-                <CardContent>
+   
                 <Box
                     sx={{
                         '& > legend': { mt: 2 },
+                        backgroundColor: 'white',
+                        display: 'flex',
+                        flexDirection: 'column',
+                        justifyContent: 'center',
+                        alignItems: 'center',
+                        height: '29.5vh'
                     }}
                     >
                     <Typography variant='subtitle1'>Feedback</Typography>
@@ -24,9 +28,7 @@ const Feedback = (props) => {
                     <Typography variant='h4'>4.6</Typography>
                     <Typography component="legend">Average Rating</Typography>
                     </Box>
-                 </CardContent>
-             </Card>
-        </>
+       
     )
 }
 

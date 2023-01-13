@@ -1,5 +1,5 @@
 import React from 'react'
-import { Card, CardContent, Typography, Button } from '@mui/material'
+import {Typography, Button, Box } from '@mui/material'
 import { CarRepair, EnergySavingsLeaf} from '@mui/icons-material'
 import formatDistanceToNow from 'date-fns/formatDistanceToNow'
 
@@ -16,26 +16,26 @@ const FaultReports = (props) => {
     const energyEfficiency = Math.round((energyData.output/energyData.input) * 100)
 
     return (
-        <>
-            <Card>
-                <CardContent>
-                    <Typography variant='subtitle1'>
+        <Box
+        sx={{backgroundColor: 'white', paddingLeft: 1, marginRight: 2, height: '29.5vh'}}>
+             <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
+                        Fault Reports
+            </Typography>
+                    <Typography variant='subtitle1' sx={{fontSize: 14}}>
                         <Button><CarRepair/></Button>
                         <Button><EnergySavingsLeaf/></Button> Parking slots {parkingSlotsLeft > 50 ? "getting filled" : "almost full"}
                     </Typography>
                     <span>{formatDistanceToNow(
                      parkingData.recordedAt
                     )}</span>
-                    <Typography variant='subtitle1'>
+                    <Typography variant='subtitle1'  sx={{fontSize: 14}}>
                     <Button><CarRepair/></Button>
                         <Button><EnergySavingsLeaf/></Button> Energy Utilization increased by {energyEfficiency} %
                     </Typography>
                     <span>{formatDistanceToNow(
                      energyData.recordedAt
                     )}</span>
-                 </CardContent>
-             </Card>
-        </>
+        </Box>
     )
 }
 

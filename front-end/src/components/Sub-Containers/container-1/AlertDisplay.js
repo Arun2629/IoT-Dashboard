@@ -1,6 +1,6 @@
 import React from 'react'
 import { WarningAmber } from '@mui/icons-material'
-import { Card, CardActions, CardContent, Typography, Button } from '@mui/material'
+import { Typography, Button, Box } from '@mui/material'
 import { Call, PersonAdd} from '@mui/icons-material'
 import formatDistanceToNow from 'date-fns/formatDistanceToNow'
 
@@ -28,10 +28,12 @@ const AlertDisplay = (props) => {
                         recordedAt: new Date()}
 
     return (
-        <>
-            <Card sx={{position: 'relative', bottom: '50%'}}>
-                <CardContent>
-                    <Typography variant='subtitle1'>
+        <Box
+        sx={{backgroundColor: 'white', paddingLeft: 2, height: '100%', marginRight: 2}}>
+             <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
+                        Alerts
+            </Typography>
+                    <Typography variant='subtitle1' sx={{fontSize: 12}}>
                         <WarningAmber sx={{color: 'red'}}/> {airPressureData.parameter} from {airPressureData.equipmentName} - 
                         {airPressureData.currentValue < airPressureData.upperLimit ? "LOW" : "HIGH"} - {airPressureData.currentValue}
                         <Button><Call/></Button>
@@ -41,7 +43,7 @@ const AlertDisplay = (props) => {
                     <span>{formatDistanceToNow(
                      airPressureData.recordedAt
                     )}</span>
-                    <Typography variant='subtitle1'>
+                    <Typography variant='subtitle1' sx={{fontSize: 12}}>
                         <WarningAmber sx={{color: 'yellow'}}/> {luminsData.parameter} from {luminsData.equipmentName} - 
                         {luminsData.currentValue < luminsData.upperLimit ? "LOW" : "HIGH"} - {luminsData.currentValue}
                         <Button><Call/></Button>
@@ -50,7 +52,7 @@ const AlertDisplay = (props) => {
                     <span>{formatDistanceToNow(
                      luminsData.recordedAt
                     )}</span>
-                    <Typography variant='subtitle1'>
+                    <Typography variant='subtitle1' sx={{fontSize: 12}}>
                         <WarningAmber sx={{color: 'yellow'}}/> {tvocData.parameter} from {tvocData.equipmentName} - 
                         {tvocData.currentValue < tvocData.upperLimit ? "LOW" : "HIGH"} - {tvocData.currentValue}
                         <Button><Call/></Button>
@@ -59,12 +61,9 @@ const AlertDisplay = (props) => {
                     <span>{formatDistanceToNow(
                      tvocData.recordedAt
                     )}</span>
-                 </CardContent>
-                 <CardActions>
                     <Button>View All</Button>
-                 </CardActions>
-             </Card>
-        </>
+
+        </Box>
     )
 }
 

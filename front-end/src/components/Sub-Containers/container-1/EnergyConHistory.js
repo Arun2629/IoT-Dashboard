@@ -1,5 +1,7 @@
 import React from 'react'
 import Charts from '../../charts/Charts'
+import { Typography } from '@mui/material'
+
 
 
 
@@ -11,11 +13,11 @@ const EnergyConHistory = (props) => {
     })
     const options = {
         chart: {
+            height: 170,
             type: 'area'
         },
         title: {
-            text: 'Energy Consumption History',
-            align: 'left'
+            text: null
         },
         yAxis: {
             labels: {
@@ -42,12 +44,49 @@ const EnergyConHistory = (props) => {
                 }
             }
         },
-        series: seriesData
+        series: seriesData,
+        responsive: {
+            rules: [{
+                condition: {
+                    maxWidth: 500
+                },
+                chartOptions: {
+                    legend: {
+                        align: 'center',
+                        verticalAlign: 'bottom',
+                        layout: 'horizontal'
+                    },
+                    yAxis: {
+                        labels: {
+                            align: 'left',
+                            x: 0,
+                            y: -5
+                        },
+                        title: {
+                            text: null
+                        }
+                    },
+                    subtitle: {
+                        text: null
+                    },
+                    credits: {
+                        enabled: false
+                    }
+                }
+            }]
+        }
       }
       
 
     return (
-                <Charts options={options}/>
+        <>
+         <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
+                        Energy Consumption History
+            </Typography>
+            <Charts options={options}/>
+        </>
+           
+           
     )
 }
 

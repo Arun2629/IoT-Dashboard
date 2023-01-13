@@ -1,13 +1,16 @@
 import React from 'react'
 import Charts from '../../charts/Charts'
+import { Typography } from '@mui/material'
 
 
 
 const BookingRooms = (props) => {
     const options = {
+        chart: {
+            height: 200
+        },
         title: {
-            text: 'Booked Meeting rooms',
-            align: 'left'
+            text: null
         },
     
         yAxis: {
@@ -61,8 +64,13 @@ const BookingRooms = (props) => {
       }
 
     return (
-       
+       <>
+        <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
+                Booked Meeting Rooms
+            </Typography>
             <Charts options={options}/>
+       </>
+            
     )
 }
 

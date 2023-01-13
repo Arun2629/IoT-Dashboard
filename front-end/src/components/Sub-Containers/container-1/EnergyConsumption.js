@@ -1,4 +1,4 @@
-import { Typography, Card, CardContent } from '@mui/material'
+import { Typography, Box } from '@mui/material'
 import React from 'react'
 
 const EnergyConsumption = (props) => {
@@ -15,18 +15,17 @@ const EnergyConsumption = (props) => {
     const energyInKw = (powerData.powerConsumed * (timeData.duration / 1000)).toFixed(2)
 
     return (
-        <>
-             <Card sx={{height: 190}}>
-                <CardContent>
+        <Box
+        sx={{backgroundColor: 'white', height: '23vh'}}>
+
                     <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
                         Energy Consumption
                     </Typography>
-                    <Typography variant='h4'>
-                        {energyInKw} Kw
+                    <Typography variant='h4' sx={{display: 'flex', flexDirection: 'row', justifyContent: 'center', alignItems: 'center', paddingTop: 5}}>
+                        {energyInKw} 
+                            Kw
                     </Typography>
-                 </CardContent>
-             </Card>
-        </>
+        </Box>
     )
 }
 

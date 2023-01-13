@@ -2,6 +2,7 @@ import React from 'react'
 import Charts from '../../charts/Charts'
 import Highcharts from "highcharts";
 import bullet from "highcharts/modules/bullet.js";
+import { Typography } from '@mui/material';
 
 bullet(Highcharts);
 
@@ -9,15 +10,13 @@ const WashroomAmenities = (props) => {
    
     const options = {
         chart: {
+            height: 200,
             type: 'bullet',
             inverted: true,
-            marginTop: 100,
+            marginTop: 50,
         },
         title: {
-            text: 'Washroom [FREE]'
-        },
-        xAxis: {
-            categories: ['<span class="hc-cat-title">Tissues</span><br/>']
+            text: "Tissues"
         },
         yAxis: {
             gridLineWidth: 0,
@@ -51,13 +50,48 @@ const WashroomAmenities = (props) => {
                 y: 275,
                 target: 250
             }]
-        }]
+        }],
+        responsive: {
+            rules: [{
+                condition: {
+                    maxWidth: 200
+                },
+                chartOptions: {
+                    legend: {
+                        align: 'center',
+                        verticalAlign: 'bottom',
+                        layout: 'horizontal'
+                    },
+                    yAxis: {
+                        labels: {
+                            align: 'left',
+                            x: 0,
+                            y: -5
+                        },
+                        title: {
+                            text: null
+                        }
+                    },
+                    subtitle: {
+                        text: null
+                    },
+                    credits: {
+                        enabled: false
+                    }
+                }
+            }]
+        }
       }
 
     return (
-      
-            <Charts options={options}/>
+      <>
+       <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
+                Washroom  [FREE]
+            </Typography>
+         <Charts options={options}/>
+      </>
     )
+           
 }
 
 export default WashroomAmenities

@@ -1,6 +1,8 @@
 import React from 'react'
 import Charts from '../../charts/Charts'
 import Highcharts from 'highcharts'
+import { Typography } from '@mui/material'
+
 
 
 const TotalOccupancy = (props) => {
@@ -13,12 +15,12 @@ const TotalOccupancy = (props) => {
     })
     const options = {
         chart: {
+            height: 200,
             zoomType: 'x',
             
         },
         title: {
-            text: 'Total Occupancy',
-            align: 'left'
+            text: null
         },
         xAxis: {
             type: 'datetime'
@@ -57,13 +59,48 @@ const TotalOccupancy = (props) => {
             type: 'area',
             name: 'Total Occupancy',
             data: data
-        }]
+        }],
+        responsive: {
+            rules: [{
+                condition: {
+                    maxWidth: 500
+                },
+                chartOptions: {
+                    legend: {
+                        align: 'center',
+                        verticalAlign: 'bottom',
+                        layout: 'horizontal'
+                    },
+                    yAxis: {
+                        labels: {
+                            align: 'left',
+                            x: 0,
+                            y: -5
+                        },
+                        title: {
+                            text: null
+                        }
+                    },
+                    subtitle: {
+                        text: null
+                    },
+                    credits: {
+                        enabled: false
+                    }
+                }
+            }]
+        }
       }
 
     return (
-       
+       <>
+        <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
+                        Total Occupancy
+            </Typography>
             <Charts options={options}/>
+       </>
     )
+            
 }
 
 export default TotalOccupancy

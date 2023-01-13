@@ -1,14 +1,15 @@
 import React from 'react'
-import { Card, CardContent, Typography} from '@mui/material'
+import { Box,Typography} from '@mui/material'
 
 
 const AirQualityIndex = (props) => {
 
     return (
-        <>
-            <Card sx={{width: '60%', position: 'relative', left: '35%', bottom: '46%'}}>
-                <CardContent>
-                    <Typography variant='h4'>
+        <Box
+        sx={{backgroundColor: 'white', height: '29.5vh'}}>
+            <Box
+            sx={{display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', paddingTop: 3}}>
+            <Typography variant='h4'>
                         910 
                     </Typography>
                     <Typography variant='subtitle1'>
@@ -20,9 +21,9 @@ const AirQualityIndex = (props) => {
                     <Typography variant='subtitle1'>
                         Temperature
                     </Typography>
-                 </CardContent>
-             </Card>
-        </>
+            </Box>
+                  
+        </Box>
     )
 }
 

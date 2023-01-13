@@ -3,7 +3,6 @@ import TopNav from './TopNav'
 import SideBar from './SideBar'
 import MainContainer from './MainContainer'
 
-
 const DashboardContainer = (props) => {
     const [open, setOpen] = useState(false)
 
@@ -15,8 +14,8 @@ const DashboardContainer = (props) => {
     return (
         <div>
             <TopNav handleOpen={handleOpen} />
-            <SideBar open={open} handleOpen={handleOpen}/>
             <MainContainer />
+            <SideBar open={open} handleOpen={handleOpen}/>
         </div>
     )
 }

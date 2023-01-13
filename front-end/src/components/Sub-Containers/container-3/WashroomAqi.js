@@ -3,6 +3,7 @@ import Charts from '../../charts/Charts'
 import Highcharts from 'highcharts'
 import * as ChartModuleMore from 'highcharts/highcharts-more.js';
 import HCSoldGauge from 'highcharts/modules/solid-gauge';
+import { Typography } from '@mui/material';
 
 
 const WashroomAqi = (props) => {
@@ -15,12 +16,11 @@ const WashroomAqi = (props) => {
             plotBackgroundImage: null,
             plotBorderWidth: 0,
             plotShadow: false,
-            height: '50%'
+            height: '90%'
         },
     
         title: {
-            text: 'Washroom(AQI)',
-            align: "left"
+            text: null
         },
     
         pane: {
@@ -94,13 +94,48 @@ const WashroomAqi = (props) => {
                 radius: 6
             }
     
-        }]
+        }],
+        responsive: {
+            rules: [{
+                condition: {
+                    maxWidth: 500
+                },
+                chartOptions: {
+                    legend: {
+                        align: 'center',
+                        verticalAlign: 'bottom',
+                        layout: 'horizontal'
+                    },
+                    yAxis: {
+                        labels: {
+                            align: 'left',
+                            x: 0,
+                            y: -5
+                        },
+                        title: {
+                            text: null
+                        }
+                    },
+                    subtitle: {
+                        text: null
+                    },
+                    credits: {
+                        enabled: false
+                    }
+                }
+            }]
+        }
     
       }
 
     return (
-    
-            <Charts options={options}/>
+        <>
+         <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
+                        Washroom (AQI)
+            </Typography>
+             <Charts options={options}/>
+        </>
+           
     )
 }
 
